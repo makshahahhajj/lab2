@@ -1,12 +1,13 @@
-import database.Database;
 import database.domain.Word;
 import database.persistance.WordPersistence;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
+        WordPersistence words = new WordPersistence();
+        Word word = words.getById(1);
+
+        System.out.println(word.getId());
 
     }
 }

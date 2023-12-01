@@ -45,13 +45,22 @@ public class Database {
     private void createTable() {
         String query = """
                 create table if not exists scanword.words(
-                    id serial,
+                    id serial primary key,
                     word text,
                     definition text
                 )
                 """;
 
         execute(query);
+    }
+    public void put(String word, String definition) {
+        String sql = """
+        insert into scanword.words
+        (word, definition)
+        values
+        ('%s', '%s')
+        """;
+        execute(String.format(sql, word, definition));
     }
     public void updateById(int id, Map<String, String> colunmNames) {
         String query = """

@@ -9,21 +9,17 @@ import java.util.Map;
 public class WordPersistence {
 
     private final Database database = Database.getInstance();
+    private static final String WORD_ID= "id";
     private static final String WORD_NAME = "word";
     private static final String DEF_NAME = "definition";
 
     public void putWord(String word, String definition) {
-        String sql = """
-        insert into scanword.words
-        (word, definition)
-        values
-        ('%s', '%s')
-        """;
-        database.execute(String.format(sql, word, definition));
+        database.put(word, definition);
     }
 
     public Word convertWord(Map<String, String> fromBd) {
         return new Word(
+                Integer.parseInt(fromBd.get(WORD_ID)),
                 fromBd.get(WORD_NAME),
                 fromBd.get(DEF_NAME)
         );
@@ -37,6 +33,7 @@ public class WordPersistence {
     public Word getById(int id) {
         Map<String, String> fromBd = database.selectById(
                 id,
+                WORD_ID,
                 WORD_NAME,
                 DEF_NAME
         );
