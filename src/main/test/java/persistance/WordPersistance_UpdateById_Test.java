@@ -26,6 +26,7 @@ public class WordPersistance_UpdateById_Test {
         Word word = wordPersistence.getById(1);
 
         then(word).isNotNull();
+        then(word.getId()).isEqualTo(1);
         then(word.getWord()).isEqualTo("Max");
         then(word.getDef()).isEqualTo("my name is");
     }

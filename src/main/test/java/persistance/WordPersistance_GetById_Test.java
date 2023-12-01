@@ -17,7 +17,8 @@ public class WordPersistance_GetById_Test {
     public void getByIdTest() {
         Word word = wordPersistence.getById(1);
         then(word).isNotNull();
-        then(word.getWord()).isEqualTo("Max");
-        then(word.getDef()).isEqualTo("my name is");
+        then(word.getId()).isEqualTo(1);
+        then(word.getWord()).isEqualTo("max");
+        then(word.getDef()).isEqualTo("razin");
     }
 }

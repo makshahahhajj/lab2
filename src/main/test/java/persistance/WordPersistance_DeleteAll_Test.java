@@ -18,10 +18,12 @@ public class WordPersistance_DeleteAll_Test {
         wordPersistence.deleteAll();
 
         Word word = wordPersistence.getById(1);
+        then(word.getId()).isNull();
         then(word.getWord()).isNull();
         then(word.getDef()).isNull();
 
         Word word2 = wordPersistence.getById(2);
+        then(word.getId()).isNull();
         then(word2.getWord()).isNull();
         then(word2.getDef()).isNull();
 

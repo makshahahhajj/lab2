@@ -21,10 +21,16 @@ public class WordPersistance_GetAll_Test {
 
         List<Word> all = wordPersistence.getAll();
 
+        then(all.size()).isEqualTo(3);
+        then(all.get(0).getId()).isEqualTo(1);
         then(all.get(0).getWord()).isEqualTo("Max");
         then(all.get(0).getDef()).isEqualTo("love tennis");
+
+        then(all.get(1).getId()).isEqualTo(2);
         then(all.get(1).getWord()).isEqualTo("Alex");
         then(all.get(1).getDef()).isEqualTo("love football");
+
+        then(all.get(2).getId()).isEqualTo(3);
         then(all.get(2).getWord()).isEqualTo("Bob");
         then(all.get(2).getDef()).isEqualTo("love gaming");
 

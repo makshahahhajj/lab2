@@ -17,6 +17,7 @@ public class WordPersistance_putWord_Test {
         wordPersistence.putWord("Alex", "love football");
         Word word  = wordPersistence.getById(1);
         then(word).isNotNull();
+        then(word.getId()).isEqualTo(1);
         then(word.getWord()).isEqualTo("Alex");
         then(word.getDef()).isEqualTo("love football");
     }
