@@ -15,8 +15,7 @@ public class WordPersistance_UpdateById_Test {
 
     @Test
     @DisplayName("update method is passed")
-    public void whenStudentExistsInDbThenReturnNull() {
-        wordPersistence.deleteAll();
+    public void updateTest() {
         wordPersistence.putWord("Alex", "love football"); // id = 1
         Map<String, String> values = new HashMap<>();
         values.put("word", "Max");

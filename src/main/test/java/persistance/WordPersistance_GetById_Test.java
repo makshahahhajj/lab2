@@ -14,7 +14,7 @@ public class WordPersistance_GetById_Test {
 
     @Test
     @DisplayName("getById method is passed")
-    public void whenStudentExistsInDbThenReturnNull() {
+    public void getByIdTest() {
         Word word = wordPersistence.getById(1);
         then(word).isNotNull();
         then(word.getWord()).isEqualTo("Max");

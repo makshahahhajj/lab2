@@ -14,9 +14,7 @@ public class WordPersistance_GetAll_Test {
 
     @Test
     @DisplayName("getAll method is passed")
-    public void whenStudentExistsInDbThenReturnNull() {
-       wordPersistence.deleteAll();
-
+    public void getAllTest() {
        wordPersistence.putWord("Max", "love tennis");
        wordPersistence.putWord("Alex", "love football");
        wordPersistence.putWord("Bob", "love gaming");

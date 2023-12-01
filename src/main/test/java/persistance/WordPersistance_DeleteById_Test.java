@@ -14,8 +14,7 @@ public class WordPersistance_DeleteById_Test {
 
     @Test
     @DisplayName("deleteById method is passed")
-    public void whenStudentExistsInDbThenReturnNull() {
-        wordPersistence.deleteAll();
+    public void deleteByIdTest() {
         wordPersistence.putWord("Alex", "love football"); // id = 1
         wordPersistence.putWord("Max", "love hockey");
         wordPersistence.deleteById(1);

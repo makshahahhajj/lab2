@@ -12,8 +12,7 @@ public class WordPersistance_putWord_Test {
 
     @Test
     @DisplayName("putWord method is passed")
-    public void whenStudentExistsInDbThenReturnNull() {
-        wordPersistence.deleteAll();
+    public void pusTes() {
 
         wordPersistence.putWord("Alex", "love football");
         Word word  = wordPersistence.getById(1);
